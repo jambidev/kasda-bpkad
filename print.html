@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cetak Data</title>
+    <style>
+      body, .container { font-weight:bold !important; }
+      .container { padding:10px; }
+      .p-0 { padding:0px !important; }
+      .indent { text-indent: 2em; }
+      table { border-collapse: collapse; }
+      #rp { float:left; }
+      #nominal { float:right; }
+      .num { mso-number-format:General; }
+      .text{ mso-number-format:"\@"; }
+    </style>
+  </head>
+  <body>
+
+    <h3 align="center">
+      BERITA ACARA REKONSILIASI ATAS PENYETORAN PAJAK PUSAT <br>
+      BELANJA LANGSUNG/TIDAK LANGSUNG <br>
+      BULAN <span id="nama_bln"></span>	TAHUN ANGGARAN <span id="thn"></span>	<br>
+      <span id="nama_skpd"></span> <br>
+      PEMERINTAH KOTA JAMBI
+    </h3>
+    <br>
+    <div class="container">
+      <div style="font-weight:bold;">
+        Pada hari ini : <span id="nama_hari"></span>	&nbsp; tanggal : <span id="tgl"></span> &nbsp; bulan <span id="nama_bln"></span> &nbsp; tahun <span id="thn"></span>, kami masing-masing :
+      </div>
+      <ol class="p-0" style="font-weight:bold;">
+        <li>
+          Luthfie Ma'roef, A.Md, NIP. 19830219 200804 1 001 Kassubid Pengelolaan Kas Daerah, Badan Pengelola Keuangan dan Aset Daerah Kota Jambi , mewakili Bendahara Umum Daerah.
+				</li>
+        <li>
+          <span id="nama_bendahara"></span> - Bendahara Pengeluaran
+        </li>
+      </ol>
+
+      <p style="font-weight:bold;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Telah melaksanakan rekonsiliasi atas penyetoran pajak-pajak Pusat ke RKUN yang telah mendapatkan Nomor Transaksi Penerimaan Negara berdasarkan transaksi pengeluaran yang dibayarkan dengan mekanisme uang persediaan dan/atau pembayaran langsung atau beban APBD sesuai peraturan perundang-undangan dengan rekapitulasi sebagai berikut :
+      </p>
+
+      <table border="1" width="100%" style="font-weight:bold;">
+        <thead>
+          <tr>
+            <td width="1%" align="center" rowspan="2" style="vertical-align:middle">No</td>
+            <td width="14%" align="center" rowspan="2" style="vertical-align:middle">Jenis pajak</td>
+            <td width="35%" align="center" colspan="2">Pajak yang dipotong / dipungut</td>
+            <td width="35%" align="center" colspan="2">Pajak yang disetor</td>
+            <td width="15%" align="center" rowspan="2" style="vertical-align:middle">Keterangan</td>
+          </tr>
+          <tr>
+            <td width="17%" align="center">Periode</td>
+            <td width="17%" align="center">Jumlah (Rp)</td>
+            <td width="17%" align="center">Periode</td>
+            <td width="17%" align="center">Jumlah (Rp)</td>
+          </tr>
+        </thead>
+        <tbody id="datanya">
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>Total</td>
+            <td></td>
+            <td id="total_1"></td>
+            <td></td>
+            <td id="total_2"></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p style="font-weight:bold;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jumlah Pajak Penghasilan dan Pajak Pertambahan Nilai yang dipotong/dipungut dan yang disetor diatas berasal dari Belanja Barang dan/atau jasa dengan rincian sebagai berikut:
+      </p>
+
+      <table border="1" width="100%" style="font-weight:bold;">
+        <thead>
+          <tr>
+            <td width="1%" align="center">No</td>
+            <td width="14%" align="center">Bulan</td>
+            <td width="35%" align="center" colspan="2">Nilai Belanja c.q SPM (dalam Rupiah)</td>
+            <td width="35%" align="center" colspan="2">Nilai Belanja c.q SPM (dalam Rupiah)</td>
+            <td width="15%" align="center">Keterangan</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">1</td>
+            <td>JANUARI</td>
+            <td colspan="2" align="center">199.xxx.xxx</td>
+            <td colspan="2" align="center">199.xxx.xxx</td>
+            <td></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td align="center" colspan="2">Jumlah</td>
+            <td colspan="2" align="center">199.xxx.xxx</td>
+            <td colspan="2" align="center">199.xxx.xxx</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p style="font-weight:bold;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berita acara ini dibuat dengan sesungguhnya dan masing-masing pihak bertanggung jawab atas kebenaran Berita Acara ini. Bukti-bukti realisasi yang tercantum dalam Berita Acara ini disimpan sesuai dengan ketentuan yang berlaku untuk kelengkapan administrasi dan keperluan pemeriksaan aparat pengawas fungsional.
+      </p>
+      <br><br>
+      <div>
+        <div align="right" style="font-weight:bold;">
+          Kota Jambi, <span id="tgldmY"></span>
+        </div>
+        <br>
+        <table width="100%" style="font-weight:bold;">
+          <tbody>
+            <tr>
+              <td width="30%" colspan="5"></td>
+              <td width="35%" align="center" style="border:1px solid gray;border-collapse: collapse;vertical-align:middle;padding:5px;">Mewakili&nbsp;Bendahara&nbsp;Umum&nbsp;Daerah,<br>Badan&nbsp;Pengelola&nbsp;Keuangan&nbsp;dan&nbsp;Aset<br>Daerah&nbsp;Kota&nbsp;Jambi</td>
+              <td width="35%" align="center" style="border:1px solid gray;border-collapse: collapse;vertical-align:middle;padding:5px;"><span id="nama_skpd"></span></td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td style="border:1px solid gray;">
+                <center>&nbsp;Kasubbid&nbsp;Pengelolaan&nbsp;Kas&nbsp;Daerah&nbsp;</center>
+                <br /><br /><br /><br /><br />
+                Luthfie Ma'roef, A.Md <br>
+                NIP. 19830219 200804 1 001
+              </td>
+              <td style="border:1px solid gray;">
+                <center>&nbsp;BENDAHARA&nbsp;PENGELUARAN&nbsp;</center>
+                <br /><br /><br /><br /><br />
+                <span id="nama_bendahara"></span><br>
+                NIP. <span id="nip_bendahara"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+function getItem(name='') {
+  if (name==='') return '';
+  return localStorage.getItem(name);
+}
+//Fungsi formatRupiah
+function get_formatRupiah(angka=0, prefix=''){
+  var number_string = angka.replace(/[^,\d]/g, '').toString(),
+  split   = number_string.split(','),
+  sisa    = split[0].length % 3,
+  rupiah  = split[0].substr(0, sisa),
+  ribuan  = split[0].substr(sisa).match(/\d{3}/gi);
+
+  // tambahkan titik jika yang di input sudah menjadi angka ribuan
+  if(ribuan){
+    separator = sisa ? '.' : '';
+    rupiah += separator + ribuan.join('.');
+  }
+
+  rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+  return prefix == undefined ? rupiah : (rupiah ? prefix + rupiah : '');
+}
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+var aksi = getUrlParameter('aksi');
+var versi = getUrlParameter('versi');
+
+var nama_bln = getItem('nama_bln').toUpperCase();
+var nama_hari = getItem('nama_hari');
+var tgl = getItem('tgl');
+var thn = getItem('thn');
+var tgldmY = getItem('tgldmY');
+var nama_skpd = getItem('nama_skpd');
+var nama_bendahara = getItem('nama_bendahara');
+var npwp_bendahara = getItem('npwp_bendahara');
+var nip_bendahara = getItem('nip_bendahara');
+var data = getItem('dataSUM');
+$('span#nama_bln').each(function(key, field) {
+  $(this).html(nama_bln);
+});
+$('span#nama_skpd').each(function(key, field) {
+  $(this).html(nama_skpd);
+});
+$('span#nama_hari').html(nama_hari);
+$('span#tgl').html(tgl);
+$('span#thn').each(function(key, field) {
+  $(this).html(thn);
+});
+spasi = '';
+for (var i = 1; i <= 100; i++) {
+  spasi += "&nbsp;";
+}
+$('span#nama_bendahara').each(function(key, field) {
+  if (key > 0) { spasi=''; }
+  $(this).html((nama_bendahara=="")?spasi:`${nama_bendahara}`);
+});
+$('span#npwp_bendahara').html(npwp_bendahara);
+$('span#nip_bendahara').html(nip_bendahara);
+$('span#tgldmY').html(tgldmY);
+
+if (data) {
+  data = JSON.parse(data);
+  if (data) {
+    n=1; t_total=0; var rp=(aksi=='xls') ? '':'Rp';
+    $.each(data, function(index, loaddata) {
+      kode_akun = loaddata[0];
+      total = loaddata[1];
+      totalRp = (versi==2) ? total:get_formatRupiah(total.toString());
+      t_total = parseInt(t_total) + parseInt(total);
+      $('#datanya').append(`
+      <tr>
+        <td align="center">${n}</td>
+        <td align="center">${kode_akun}</td>
+        <td align="center">${nama_bln}</td>
+        <td><span id="rp">${rp}</span><span id="nominal" class="text">${totalRp}</span></td>
+        <td align="center">${nama_bln}</td>
+        <td><span id="rp">${rp}</span><span id="nominal" class="text">${totalRp}</span></td>
+        <td align="center">lengkap</td>
+      </tr>
+      `);
+      n++;
+    });
+    t_totalRp = (versi==2) ? t_total:get_formatRupiah(t_total.toString());
+    $('#total_1').html(`<span id="rp">${rp}</span><span id="nominal" class="text">${t_totalRp}</span>`);
+    $('#total_2').html(`<span id="rp">${rp}</span><span id="nominal" class="text">${t_totalRp}</span>`);
+  }
+}
+
+if (aksi=='xls') {
+  $(document).ready(function() {
+    var result = 'data:application/vnd.ms-excel,' + encodeURIComponent($('body').html());
+    var link = document.createElement("a");
+    document.body.appendChild(link);
+    link.download = `${tgldmY} - ${nama_skpd}.xls`; //You need to change file_name here.
+    link.href = result;
+    link.click();
+  });
+}else {
+  setTimeout(function(){ window.print(); }, 1000);
+}
+
+setTimeout(function(){ window.close(); }, 5000);
+</script>
+</body>
+</html>

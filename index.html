@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="description" content="🤙BPKAD - Kota Jambi">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Mardianto Eka Saputra">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚛️ Kasda - BPKAD - Jambi 📗</title>
+  <link rel="shortcut icon" href="assets/img/404-tick.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/sweetalert2/sweetalert2.min.css">
+  <link rel="stylesheet" href="assets/css/floating-wpp.css">
+  <link rel="stylesheet" type="text/css" href="assets/parsley/parsley.min.css">
+  <link rel="stylesheet" href="assets/select2/select2.min.css" />
+  <link rel="stylesheet" href="assets/select2/select2-bootstrap-5-theme.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row m-3">
+      <div class="border rounded-5 p-3 bg-white col-lg-6 offset-lg-3">
+        <div class="rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+          style="background: #103cbe;">
+          <div class="featured-image mt-3 mb-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Lambang_Kota_Jambi.png" class="img-fluid"
+              style="width:100%;max-width: 250px;">
+          </div>
+          <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be
+            Verified</p>
+          <small class="text-white text-wrap text-center p-1"
+            style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join with Kasda BPKAD Kota
+            Jambi</small>
+        </div>
+
+        <div class="header-text mt-4 mb-4">
+          <h2 class="text">Hello, Teman Teman SKPD</h2>
+          <script>
+            let text = document.querySelector('.text');
+            text.innerHTML = text.innerText.split('').map((letters, i) =>
+              `<span style="transition-delay:${i * 40}ms; filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join(
+              '');
+          </script>
+          <p>Mohon Bantuan nya untuk Mengisi Data Di bawah ini Ya...</p>
+        </div>
+
+        <div class="container-fluid">
+          <form id="form-submit" action="javascript:onSubmit()" method="POST" data-parsley-validate="true">
+            <span>Nomor SPM / SPD</span>
+            <div class="input-group">
+              <input type="text" name="Nomor SPM / SPD" class="form-control form-control-lg bg-light fs-6"
+                placeholder="Nomor SPM / SPD" required>
+            </div>
+            <span>Tanggal SP2D</span>
+            <div class="input-group">
+              <input type="date" name="TANGGAL SP2D" class="form-control form-control-lg bg-light fs-6"
+                placeholder="Tanggal SP2D" required>
+            </div>
+            <span>Tanggal Buku</span>
+            <div class="input-group">
+              <input type="date" name="TANGGAL BUKU" class="form-control form-control-lg bg-light fs-6"
+                placeholder="Tanggal Buku" required>
+            </div>
+            <span>NILAI BELANJA (Rp)</span>
+            <div class="input-group">
+              <input type="text" inputmode="numeric" name="NILAI BELANJA (Rp)" id="belanjaa" oninput="inputBelanja()"
+                class="form-control form-control-lg bg-light fs-6" placeholder="Nilai Belanja" oninput="inputBelanja()"
+                required>
+            </div>
+            <span>Nomor SP2D</span>
+            <div class="input-group">
+              <input type="text" pattern="[0-9]*" inputmode="numeric" name="Nomor SP2D"
+                class="form-control form-control-lg bg-light fs-6" placeholder="Nomor SP2D"
+                onkeypress="return hanyaAngka(this);" required>
+            </div>
+
+            <span>Nilai Belanja</span>
+            <div class="input-group">
+              <input type="text" inputmode="numeric" name="NILAI BELANJA" id="rupiahh" oninput="inputRupiahh()"
+                class="form-control form-control-lg bg-light fs-6" placeholder="Nilai Belanja" required>
+            </div>
+
+            <span>Kode Akun Belanja</span>
+            <div class="input-group">
+              <select class="form-select form-control-lg bg-light fs-6" name="KODE AKUN BELANJA" id="kode_akun_belanja"
+                onChange="showKodeAkun()" required>
+              </select>
+            </div>
+            <span>Kode Akun</span>
+            <div class="input-group">
+              <select class="form-select form-control-lg bg-light fs-6" name="KODE AKUN" id="kode_akun"
+                onChange="showJenisPajak()" required>
+              </select>
+            </div>
+            <span>Jenis Pajak</span>
+            <div class="input-group">
+              <select class="form-select form-control-lg bg-light fs-6" name="JENIS PAJAK" id="jenis_pajak" required>
+              </select>
+            </div>
+            <span>Jumlah</span>
+            <div class="input-group">
+              <input type="text" inputmode="numeric" name="JUMLAH" id="jumlahBelanja" oninput="inputJumlahBelanja()"
+                class="form-control form-control-lg bg-light fs-6" placeholder="Jumlah" required>
+            </div>
+
+            <span>Keterangan SKPD</span>
+            <div class="input-group">
+              <select class="form-select form-control-lg bg-light fs-6" name="KET" id="ket" onChange="showNPWP()"
+                required>
+              </select>
+            </div>
+
+            <span>NPWP Bendahara</span>
+            <div class="input-group">
+              <input type="text" name="NPWP BENDAHARA" id="npwp_bendahara"
+                class="form-control form-control-lg bg-light fs-6" placeholder="NPWP Bendahara" readonly required>
+            </div>
+            <span>NAMA Bendahara</span>
+            <div class="input-group">
+              <input type="text" name="NAMA BENDAHARA" id="nama_bendahara"
+                class="form-control form-control-lg bg-light fs-6" placeholder="NAMA Bendahara" readonly required>
+            </div>
+            <span>NIP Bendahara</span>
+            <div class="input-group">
+              <input type="text" name="NIP BENDAHARA" id="nip_bendahara"
+                class="form-control form-control-lg bg-light fs-6" placeholder="NIP Bendahara" readonly required>
+            </div>
+            <span>NPWP SKPD</span>
+            <div class="input-group">
+              <input type="text" name="NPWP SKPD" id="npwp_skpd" class="form-control form-control-lg bg-light fs-6"
+                placeholder="NPWP SKPD" readonly required>
+            </div>
+            <span>NPWP Rekanan</span>
+            <div class="input-group">
+              <input type="text" name="NPWP REKANAN" id="npwp_rekanan"
+                class="form-control form-control-lg bg-light fs-6" placeholder="NPWP Rekanan" required>
+            </div>
+            <span>Nama Rekanan</span>
+            <div class="input-group">
+              <input type="text" name="NAMA REKANAN" class="form-control form-control-lg bg-light fs-6"
+                placeholder="Nama Rekanan" required>
+            </div>
+            <span>NTPN</span>
+            <div class="input-group">
+              <input type="text" name="NTPN" class="form-control form-control-lg bg-light fs-6" placeholder="NTPN"
+                required>
+            </div>
+            <!-- <span>Keterangan</span>
+              <div class="input-group">
+                  <input type="text" name="KET" class="form-control form-control-lg bg-light fs-6" placeholder="Keterangan" required>
+              </div> -->
+            <span>ID Billing</span>
+            <div class="input-group">
+              <input type="text" name="ID BILLING" class="form-control form-control-lg bg-light fs-6"
+                placeholder="ID Billing" required>
+            </div>
+            <span>Uraian Pekerjaan</span>
+            <div class="input-group">
+              <input type="text" name="URAIAN PEKERJAAN" class="form-control form-control-lg bg-light fs-6"
+                placeholder="Uraian Pekerjaan" required>
+            </div>
+
+            <div class="input-group mb-2 d-flex justify-content-between">
+              <div class="form-check">
+                <div class="master">
+                  <small>
+                    <a href="https://docs.google.com/spreadsheets/d/1ygJDB9gM4VBLtYfP60GjhDErQh9tEJhzhEyuw2W0DX8/edit?usp=sharing"
+                      target="_blank">Lihat Master Data Keseluruhan</a>
+                  </small>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <button class="btn w-100 fs-6 modal__button btn-lg" id="btnKirim">Kirim Data</button>
+              </div>
+
+              <div class="input-group mb-3">
+                <a class="btn w-100 fs-6 modal__button btn-lg" data-bs-toggle="modal" data-bs-target="#modalPrint">Cetak
+                  Data</a>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalPrint" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalPrintLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalPrintLabel">Cetak Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="form-cetak" action="javascript:void(0)" method="POST" data-parsley-validate="true">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <span>Bulan</span>
+                <div class="input-group">
+                  <select class="form-select form-control-lg bg-light fs-6" id="p_bln" required>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <span>Tahun</span>
+                <div class="input-group">
+                  <select class="form-select form-control-lg bg-light fs-6" id="p_thn" required>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <span>SKPD</span>
+            <div class="input-group">
+              <select class="form-select form-control-lg bg-light fs-6" id="p_skpd">
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> -->
+            <button type="submit" class="btn btn-success" onclick="onPrint('xls', '1')"
+              title="Export Excel Nominal String">Export Excel v1</button>
+            <button type="submit" class="btn btn-success" onclick="onPrint('xls', '2')"
+              title="Export Excel Nominal Number">Export Excel v2</button>
+            <button type="submit" class="btn btn-primary" onclick="onPrint()">Cetak</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="myButton"></div>
+  <div id="listKode" hidden></div>
+  <div id="listSKPD" hidden></div>
+  <div id="sumData" hidden></div>
+  <a href="" id="urlPrint" target="_blank" hidden></a>
+
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script src="assets/select2/select2.full.min.js"></script>
+
+  <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+  <script src="assets/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/parsley/parsley.min.js"></script>
+  <script src="assets/parsley/id.js"></script>
+  <script type="text/javascript" src="assets/css/floating-wpp.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#form-submit select').select2({
+        theme: 'bootstrap-5'
+      });
+      $('#form-cetak select').select2({
+        theme: 'bootstrap-5',
+        dropdownParent: $('#modalPrint')
+      });
+    });
+
+    function setItem(name = '', data = '') {
+      if (name === '') return '';
+      localStorage.setItem(name, data);
+    }
+
+    var nama_bln = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
+      'Oktober', 'November', 'Desember'
+    ];
+    var nama_hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kami', "Jum'at", 'Sabtu'];
+    for (var i = 1; i <= 12; i++) {
+      $('#p_bln').append(`<option value="${i}">${nama_bln[i]}</option>`)
+    }
+
+    var dateNow = new Date();
+    var firstYear = 2023;
+    var lastYear = dateNow.getFullYear();
+    var month = dateNow.getMonth() + 1;
+    var lastDay = new Date(lastYear, month, 0);
+    var endDate = lastDay.getDate();
+    $('#p_bln').val(month);
+    for (var i = lastYear; i >= firstYear; i--) {
+      $('#p_thn').append(`<option value="${i}">${i}</option>`)
+    }
+
+    function onPrint(aksi = '', versi = '') {
+      localStorage.clear();
+      $('#sumData').html('');
+      swalLoading();
+      var dateNow = new Date();
+      var tgl = dateNow.getDate();
+      var bln = $('#p_bln :selected').val();
+      var thn = $('#p_thn :selected').val();
+      var selSKPD = $('#p_skpd :selected');
+      var skpd = selSKPD.val();
+      var nama_skpd = (skpd == 0) ? 'SEMUA SKPD' : skpd;
+      var blnnya = nama_bln[bln];
+      setItem('nama_bln', blnnya);
+      setItem('nama_hari', nama_hari[dateNow.getDay()]);
+      setItem('tgl', tgl);
+      setItem('thn', thn);
+      setItem('nama_skpd', nama_skpd);
+      setItem('nama_bendahara', selSKPD.data('nama_bendahara'));
+      setItem('npwp_bendahara', selSKPD.data('npwp_bendahara'));
+      setItem('nip_bendahara', selSKPD.data('nip_bendahara'));
+
+      bln = (bln < 10) ? `0${bln}` : bln;
+      setItem('tgldmY', `${tgl}/${bln}/${thn}`);
+      var tglDari = `${thn}-${bln}-01`;
+      var tglSampai = `${thn}-${bln}-${endDate}`;
+      var tblMasterData =
+        'https://docs.google.com/spreadsheets/d/1ygJDB9gM4VBLtYfP60GjhDErQh9tEJhzhEyuw2W0DX8/edit#gid=1855650032';
+
+      var where_skpd = (skpd == 0) ? '' : `Q='${skpd}' and`;
+      $('#sumData').sheetrock({
+        url: tblMasterData,
+        sql: `select I,sum(K) where ${where_skpd} D >= date '${tglDari}' and D <= date '${tglSampai}' group by I order by I asc`,
+        /* options */
+        callback: function (error, options, response) {
+          // console.log(error, options, response);
+          var datanya = [];
+          if (response && response.rows) {
+            $.each(response.rows, function (index, loaddata) {
+              if (index != 0) {
+                datanya.push(loaddata.cellsArray);
+              }
+            });
+          }
+          // console.log(`${tglDari} s/d ${tglSampai}`, datanya);
+          setItem('dataSUM', JSON.stringify(datanya));
+          if (datanya.length == 0) {
+            localStorage.clear();
+            $('#sumData').html('');
+            nama_skpdnya = (skpd == 0) ? `<b>${nama_skpd}</b>` : `SKPD <b>${nama_skpd}</b>`;
+            setTimeout(function () {
+              swalResponse('warning',
+                `${nama_skpdnya} di bulan <b>${blnnya}</b> dan tahun <b>${thn}</b> tidak ditemukan!`);
+            }, 1000);
+          } else {
+            $('#modalPrint').modal('hide');
+            var url = window.location.href.replace('index.html', '');
+            url += 'print.html';
+            if (aksi != '') {
+              url += '?aksi=' + aksi;
+              if (versi != '') {
+                url += '&versi=' + versi;
+              }
+            } else {
+              if (versi != '') {
+                url += '?versi=' + versi;
+              }
+            }
+            $('a#urlPrint').attr('href', url);
+            $('a#urlPrint')[0].click();
+            setTimeout(function () {
+              window.location.reload();
+            }, 1500);
+          }
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
